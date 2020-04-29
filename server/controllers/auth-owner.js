@@ -41,7 +41,7 @@ exports.signin = async (req, res) => {
     avatar: owner.photo || null
   };
 
-  const token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '2h' });
+  const token = jwt.sign(payload, "456#$%", {expiresIn: '2h' });
 
   return res.json({ token });
 };
@@ -61,7 +61,7 @@ exports.refreshToken = async (req, res) => {
 
     const token = jwt.sign(
       payload,
-      process.env.JWT_SECRET /*{ expiresIn: 5 }*/
+      "456#$%" /*{ expiresIn: 5 }*/
     );
 
     return res.json({ token });
@@ -88,7 +88,7 @@ exports.requireOwnerSignin = async (req, res, next) => {
 
 function parseToken(token) {
   try {
-    return jwt.verify(token.split(" ")[1], process.env.JWT_SECRET);
+    return jwt.verify(token.split(" ")[1], "456#$%");
   } catch (err) {
     return false;
   }

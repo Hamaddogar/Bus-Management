@@ -12,7 +12,10 @@ import { checkIfTokenExpired } from "../helpers";
 
 export const signUp = user => axios.post("http://localhost:4000/api/auth-owner/signup", user);
 
-export const signIn = user => axios.post("http://localhost:4000/api/auth-user/signin", user);
+export const signIn = user => axios.post("http://localhost:4000/api/auth-owner/signin", user);
+ //this is for user
+// export const signIn = user => axios.post("http://localhost:4000/api/auth-user/signin", user);
+
 
 export const refreshToken = id =>
   axios.post("/auth-owner/refreshToken", { _id: id });

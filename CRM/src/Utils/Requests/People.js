@@ -8,5 +8,5 @@ export const updateOwner = (id, body) => axios.put(`/owners/${id}`, body);
 
 export const addOwner = body =>{
     console.log(body)
-   return axios.post("/auth-owner/signup", body);
+   return axios.post("http://localhost:4000/auth-owner/signup", body);
 }
