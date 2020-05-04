@@ -12,18 +12,24 @@ class Success extends Component {
 
 	async componentDidMount() {
 		if (this.props.isUpdate) {
-			const resp = await updateBus(this.props.match.params.slug, this.props.formData).catch(err => {
-				this.setState({ loading: false, error: err.response.data.error });
+			const resp = await updateBus(this.props.match.params.slug, this.props.values).then(res => {
+				 if(res)
+				 {
+					 this.setState({ loading: false });
+
+				 }
 			});
 			if (resp && resp.status === 200) {
 				this.setState({ loading: false });
 			}
 		} else {
 			// Add the bus
-			const resp = await addNewBus(this.props.formData).catch(err => {
+
+			 console.log("add bus data",this.props.values)
+			const resp = await addNewBus(this.props.values).catch(err => {
 				this.setState({ loading: false, error: err.response.data.error });
 			});
-			if (resp && resp.status === 200) {
+			if (resp ) {
 				this.setState({ loading: false });
 			}
 		}
@@ -52,7 +58,7 @@ class Success extends Component {
 	};
 
 	render() {
-		return <Layout>{this.state.loading ? this.loadingShow() : this.renderMessage()}</Layout>;
+		return <Layout>{this.state.loading ?  this.renderMessage():this.loadingShow()}</Layout>;
 	}
 }
 

@@ -28,6 +28,8 @@ export default class Confirm extends React.Component {
           Upload the photo and add the bus
         </button>
         <ImageUploader
+          type="file"
+          name="image"
           withIcon={true}
           buttonText="Choose photo"
           onChange={handleChange("image")}
@@ -36,7 +38,7 @@ export default class Confirm extends React.Component {
           singleImage={true}
           withPreview={true}
           buttonStyles={{ display: values.buttonStyle || buttonStyle }}
-          defaultImage={values.image}
+    
         />
       </Layout>
     );

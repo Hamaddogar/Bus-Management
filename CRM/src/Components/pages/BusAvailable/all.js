@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { SERVER_ROUTE } from "../../../Utils/config";
 import Loading from "../../core/Loading";
 
+
 class BusAvailable extends Component {
   constructor(props) {
     super(props);
@@ -30,9 +31,10 @@ class BusAvailable extends Component {
           console.log(record);
           return (
             <>
+            {console.log(record.image[0])}
               <img
                 className="busImage"
-                src={`${SERVER_ROUTE}/uploads/` + record.image}
+                src={`${SERVER_ROUTE}/uploads/` + record.image[0]}
               />
             </>
           );
@@ -101,13 +103,13 @@ class BusAvailable extends Component {
               >
                 <i className="fa fa-edit"></i>
               </button>
-              <button
+              {/* <button
                 className="btn btn-danger btn-sm"
                 onClick={() => this.deleteRecord(record.slug)}
                 style={{ marginRight: "5px" }}
               >
                 <i className="fa fa-trash"></i>
-              </button>
+              </button> */}
               <button
                 className="btn btn-default btn-sm"
                 onClick={() =>
@@ -198,7 +200,7 @@ class BusAvailable extends Component {
         bus.journeyDate = moment(bus.journeyDate).format("MMMM Do, YYYY");
         bus.sn = counter;
         counter++;
-        bus.ownerName = bus.owner.name;
+        bus.ownerName = "hamad";
         bus.travel = bus.travel.name;
         return bus;
       });

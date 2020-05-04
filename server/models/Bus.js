@@ -54,7 +54,7 @@ const busSchema = new mongoose.Schema(
       maxlength: 32
     },
     image: {
-      type: String
+      type: Array
     },
     departure_time: {
       type: String,

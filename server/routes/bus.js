@@ -20,10 +20,9 @@ const {
 const { uploadBusImage } = require("../helpers");
 
 router
-  .route("/")
+  
   .get(getBuses)
-  .post(requireOwnerSignin, uploadBusImage, create);
-
+  
 router.get(
   "/owner-bus-available",
   requireOwnerSignin,

@@ -81,7 +81,13 @@ class AddNewBus extends Component {
   // Handle fields change
   handleChange = input => e => {
     let value;
+      
+    
     if (input === "image") {
+       
+     
+     
+      this.setState( this.state.formData.append("image",e[0]))
       if (e.length === 0) {
         return this.setState({ buttonStyle: "block" });
       }
@@ -94,9 +100,11 @@ class AddNewBus extends Component {
       value = e.target.value;
     }
 
-    this.state.formData.set(input, value);
+
 
     this.setState({ [input]: value });
+
+     console.log("form",this.state.image.name)
   };
 
   // componentWillUnmount() {

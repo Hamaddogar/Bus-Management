@@ -91,12 +91,12 @@ class BusUnavailable extends Component {
               >
                 <i className="fa fa-edit"></i>
               </button>
-              <button
+              {/* <button
                 className="btn btn-danger btn-sm"
                 onClick={() => this.deleteRecord(record.slug)}
               >
                 <i className="fa fa-trash"></i>
-              </button>
+              </button> */}
             </>
           );
         }

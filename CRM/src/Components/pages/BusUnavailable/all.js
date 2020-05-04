@@ -101,12 +101,12 @@ class BusUnavailable extends Component {
               >
                 <i className="fa fa-edit"></i>
               </button>
-              <button
+              {/* <button
                 className="btn btn-danger btn-sm"
                 onClick={() => this.deleteRecord(record.slug)}
               >
                 <i className="fa fa-trash"></i>
-              </button>
+              </button> */}
             </>
           );
         }
@@ -167,7 +167,8 @@ class BusUnavailable extends Component {
         bus.journeyDate = moment(bus.journeyDate).format("MMMM Do, YYYY");
         bus.sn = counter;
         counter++;
-        bus.ownerName = bus.owner.name;
+        // bus.ownerName = bus.owner.name;
+         bus.ownerName="Fazan"
         bus.travel = bus.travel.name;
         return bus;
       });

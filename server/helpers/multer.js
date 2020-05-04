@@ -5,7 +5,7 @@ const multer= require("multer");
 //that will be uploaded
 const busImage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './public/uploads/busimage')
+      cb(null, '../helpers/uploads')
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now()  + path.extname(file.originalname))
@@ -14,7 +14,7 @@ const busImage = multer.diskStorage({
 
   const ownerAvatar = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './public/uploads/ownerAvatar')
+      cb(null, '../helpers/uploads')
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now()  + path.extname(file.originalname))

@@ -21,6 +21,7 @@ export default class FormPrimaryDetails extends Component {
 
   render() {
     const { values, handleChange } = this.props;
+     console.log("thus is primaryDetail",values)
 
     return (
       <Layout title="Add new bus (Primary details)">

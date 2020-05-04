@@ -34,6 +34,8 @@ class BusAvailable extends Component {
           return (
             <>
               <img
+                height="200"
+                width="200"
                 className="busImage"
                 src={`${SERVER_ROUTE}/uploads/` + record.image}
               />
@@ -90,13 +92,13 @@ class BusAvailable extends Component {
               >
                 <i className="fa fa-edit"></i>
               </button>
-              <button
+              {/* <button
                 className="btn btn-danger btn-sm"
                 onClick={() => this.deleteRecord(record.slug)}
                 style={{ marginRight: "5px" }}
               >
                 <i className="fa fa-trash"></i>
-              </button>
+              </button> */}
               <button
                 className="btn btn-default btn-sm"
                 onClick={() =>

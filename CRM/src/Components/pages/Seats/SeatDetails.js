@@ -20,7 +20,7 @@ class SeatDetails extends Component {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, update it!"
+      confirmButtonText: "Yes, seat booked!"
     }).then(async result => {
       if (result.value) {
         this.props.setSold([...this.props.sold, seat]);

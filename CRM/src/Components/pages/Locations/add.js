@@ -12,7 +12,7 @@ class AddLocation extends Component {
     name: "",
     districts: [],
     loading: "",
-    district: "achham"
+    district: "Faisalbad"
   };
 
   componentDidMount() {

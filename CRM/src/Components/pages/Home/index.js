@@ -38,6 +38,8 @@ class Home extends React.Component {
     let availablecount = 0;
     let unavailablecount = 0;
     const avialable = await getAllAvailableBuses();
+
+     console.log("all buses data",avialable)
     if (avialable && avialable.status === 200) {
       availablecount = avialable.data.length;
     }
